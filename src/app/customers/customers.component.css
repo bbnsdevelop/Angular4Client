@@ -1,0 +1,11 @@
+.customer-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.minha-tabela td, .minha-tabela caption {
+    border: 1px #000 solid;
+}
+
+.minha-tabela caption {
+     border-bottom: none;
+}

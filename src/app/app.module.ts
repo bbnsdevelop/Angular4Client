@@ -13,6 +13,11 @@ import {CreateCustomerComponent} from './create-customer/create-customer.compone
 import {enableProdMode} from '@angular/core';
 import {SearchCustomersComponent} from './search-customers/search-customers.component';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { AppBootstrapModule } from './app-bootstrap.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,13 @@ import {SearchCustomersComponent} from './search-customers/search-customers.comp
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    BrowserModule, 
+    AppBootstrapModule,
+    AppRoutingModule,
+    BrowserModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

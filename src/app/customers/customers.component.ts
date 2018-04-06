@@ -12,7 +12,9 @@ export class CustomersComponent implements OnInit {
   customers: Customer[];
   selectedCustomer: Customer;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+
+  }
 
   getCustomers() {
      this.dataService.getCustomers().then(customers => this.customers = customers);

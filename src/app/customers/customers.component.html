@@ -1,7 +1,29 @@
-<ul>
-    <li *ngFor="let cust of customers"
+<!-- <ul>
+	<li *ngFor="let cust of customers"
 		[class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
-		<h4>{{cust.id}} - {{cust.firstName}} {{cust.lastName}}</h4> 
+		<h4>{{cust.id}} - {{cust.firstName}} {{cust.lastName}}</h4>
 	</li>
 </ul>
+-->
+<div class="container">
+	<h2 class="text-center">Customer</h2>
+	<p class="text-center">List of Customers</p>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let cust of customers" [class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
+				<td>{{cust.firstName}}</td>
+				<td>{{cust.lastName}}</td>
+				<td>--</td>
+			</tr>			
+		</tbody>
+	</table>
+</div>
 <customer-detail [customer]="selectedCustomer"></customer-detail>
+<customer-detail [disableDetails]="false"></customer-detail>

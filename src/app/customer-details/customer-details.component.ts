@@ -12,6 +12,8 @@ import { DataService } from '../data.service';
 
 export class CustomerDetailsComponent {
 
+  @Input() disableDetails= true;
+
   @Input() customer: Customer;
 
   constructor(private dataService: DataService) {}
@@ -22,5 +24,8 @@ export class CustomerDetailsComponent {
 
   goBack(): void {
     window.location.replace('');
+  }
+
+  disableDetail(disableDetails){
   }
 }
