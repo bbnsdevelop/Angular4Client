@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Customer } from '../customer';
 import { DataService } from '../data.service';
@@ -10,13 +10,18 @@ import { DataService } from '../data.service';
   providers: [DataService]
 })
 
-export class CustomerDetailsComponent {
-
-  @Input() disableDetails= true;
+export class CustomerDetailsComponent implements OnInit {
 
   @Input() customer: Customer;
 
+  ativaDetalhes;
+
   constructor(private dataService: DataService) {}
+  
+  ngOnInit(): void {
+    this.ativaDetalhes = true;
+    console.log(this.ativaDetalhes+ 'init');
+  }
 
   delete(): void {
     this.dataService.delete(this.customer.id).then(() => this.goBack());
@@ -26,6 +31,8 @@ export class CustomerDetailsComponent {
     window.location.replace('');
   }
 
-  disableDetail(disableDetails){
+  disableDetail(){
+    console.log(this.ativaDetalhes + 'desa');
+    this.ativaDetalhes = false;
   }
 }

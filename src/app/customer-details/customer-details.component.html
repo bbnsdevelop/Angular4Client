@@ -1,4 +1,4 @@
-<div *ngIf="disableDetails">
+<div [hidden]="!ativaDetalhes">
 	<div *ngIf="customer">
 		<h2>{{customer.firstName}} details:</h2>
 		<div>
@@ -12,7 +12,8 @@
 		</div>
 
 		<button class="btn btn-danger" (click)="delete()">Delete</button>
-		<button class="btn btn-success" *ngIf="disableDetails"
-			(click)="disableDetail(disableDetails = false)">Hide</button>
+		<button class="btn btn-success" (click)="disableDetail()">Hide</button>
 	</div>
+	
+	<span *ngIf="ativaDetalhes">testando if {{ativaDetalhes}}</span>
 </div>
