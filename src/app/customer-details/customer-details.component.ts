@@ -14,7 +14,7 @@ export class CustomerDetailsComponent implements OnInit {
 
   @Input() customer: Customer;
 
-  ativaDetalhes;
+  @Input() ativaDetalhes;
 
   constructor(private dataService: DataService) {}
   

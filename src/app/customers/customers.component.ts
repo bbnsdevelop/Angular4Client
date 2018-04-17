@@ -11,6 +11,7 @@ import { DataService } from '../data.service';
 export class CustomersComponent implements OnInit {
   customers: Customer[];
   selectedCustomer: Customer;
+  ativaDetalhes: boolean;
 
   constructor(private dataService: DataService) {
 
@@ -26,5 +27,6 @@ export class CustomersComponent implements OnInit {
 
   onSelect(cust: Customer): void {
     this.selectedCustomer = cust;
+    this.ativaDetalhes = true;
   }
 }
