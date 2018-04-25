@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 import { Customer } from '../customer';
 import { DataService } from '../data.service';
@@ -10,14 +10,18 @@ import { DataService } from '../data.service';
   providers: [DataService]
 })
 
-export class CustomerDetailsComponent implements OnInit {
+export class CustomerDetailsComponent implements OnInit, OnChanges {
 
   @Input() customer: Customer;
 
   @Input() ativaDetalhes;
 
   constructor(private dataService: DataService) {}
-  
+
+   ngOnChanges() {
+    this.ativaDetalhes = true;
+  }
+
   ngOnInit(): void {
     this.ativaDetalhes = true;
     console.log(this.ativaDetalhes+ 'init');
@@ -32,7 +36,6 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   disableDetail(){
-    console.log(this.ativaDetalhes + 'desa');
     this.ativaDetalhes = false;
   }
 }

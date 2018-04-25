@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Customer } from '../customer';
 import { DataService } from '../data.service';
 
@@ -8,13 +8,17 @@ import { DataService } from '../data.service';
   styleUrls: ['./customers.component.css'],
 })
 
-export class CustomersComponent implements OnInit {
+export class CustomersComponent implements OnInit, OnChanges {
   customers: Customer[];
   selectedCustomer: Customer;
   ativaDetalhes: boolean;
 
   constructor(private dataService: DataService) {
 
+  }
+
+   ngOnChanges() {
+    this.ativaDetalhes = true;
   }
 
   getCustomers() {
