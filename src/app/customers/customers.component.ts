@@ -28,7 +28,7 @@ export class CustomersComponent implements OnInit, OnChanges {
   ngOnInit(): void {
      this.getCustomers();
   }
-
+  
   onSelect(cust: Customer): void {
     this.selectedCustomer = cust;
     this.ativaDetalhes = true;
